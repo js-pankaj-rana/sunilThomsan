@@ -5,20 +5,40 @@
 	<title>Document 1</title>
 </head>
 <body>
-	<header>
+	<!-- http://html5pattern.com/ -->
+	<!-- https://webdesign.tutsplus.com/tutorials/html5-form-validation-with-the-pattern-attribute--cms-25145 -->
+	<!-- <header>
 		<section class="top-nav">
-			
+			<figure>
+				<img src="" alt="image">
+				<figcaption></figcaption>
+				<cite></cite>	
+			</figure>
 		</section>
-	</header>
+	</header> -->
 	<article>
 		<section>
-		
+			<form action="" method="get">
+				<label for="fname">First Name</label>
+				<input type="text" id="fname" name="fname" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required="required"  title="Username should only contain lowercase letters. e.g. john" /><br/>
+
+				<label for="lname">Last Name</label>
+				<input type="text" id="lname" name="lname" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"   required="required" />
+
+				<button type="submit">Submit</button>
+			</form>
 		</section>	
 	</article>
-	<div class="test1">It is a test  ...</div>
+	<script>
+		var input = document.getElementById('fname');
+		input.oninvalid = function(event) {
+		    event.target.setCustomValidity('Username should only contain lowercase letters. e.g. john');
+		}
+	</script>
+	<!-- <div class="test1">It is a test  ...</div>
 	
 	<h1>Storage</h1>
-
+	
 	<ul>
 		<li>Local Storage
 			<ul>
@@ -38,7 +58,33 @@
 				<li>sessionStorage.key</li>
 			</ul>
 		</li>
-	</ul>
+	</ul> -->
+
+	<!-- 
+		email
+		search
+		color
+		date
+		dateTime
+		range
+		number
+
+	 -->
+	 <ul class="columns">
+			<li><a href="#input-search"><code><span class="pln">search</span></code></a></li>
+			<li><a href="#input-email"><code><span class="pln">email</span></code></a></li>
+			<li><a href="#input-url"><code><span class="pln">url</span></code></a></li>
+			<li><a href="#input-tel"><code><span class="pln">tel</span></code></a></li>
+			<li><a href="#input-number"><code><span class="pln">number</span></code></a></li>
+			<li><a href="#input-range"><code><span class="pln">range</span></code></a></li>
+			<li><a href="#input-date"><code><span class="pln">date</span></code></a></li>
+			<li><a href="#input-month"><code><span class="pln">month</span></code></a></li>
+			<li><a href="#input-week"><code><span class="pln">week</span></code></a></li>
+			<li><a href="#input-time"><code><span class="pln">time</span></code></a></li>
+			<li><a href="#input-datetime"><code><span class="pln">datetime</span></code></a></li>
+			<li><a href="#input-datetime-local"><code><span class="pln">datetime</span><span class="pun">-</span><span class="pln">local</span></code></a></li>
+			<li><a href="#input-color"><code><span class="pln">color</span></code></a></li>
+		</ul>
 	<footer>
 		
 	</footer>
